@@ -11,6 +11,7 @@ export const DefaultNavbar = () => {
 
   const [menuStatus, setMenuStatus] = useState('hidden')
 
+
   const handleMenuStatus = () => {
     if (menuStatus === 'hidden') {
       setMenuStatus('visible')
@@ -32,6 +33,7 @@ export const DefaultNavbar = () => {
             alt="logo"
           />
         </HeaderLogo>
+        
         <HeaderLinks>
           <li onClick={handleMenuStatus} className="hamburger__btn">
             <HiMenuAlt3 size="60px" />
@@ -39,9 +41,9 @@ export const DefaultNavbar = () => {
           <li className={`hamburger__menu ${menuStatus}`}>
             <ul className='hamburger__menu-links'>
               <li>
-                <a onClick={handleMenuStatus} href="/">
+              <Link onClick={handleMenuStatus} to={'/games'}>
                   <IoGameControllerOutline size="30px" />Games
-                </a>
+              </Link>
               </li>
               <li>
                 <a onClick={handleMenuStatus} href="/">
